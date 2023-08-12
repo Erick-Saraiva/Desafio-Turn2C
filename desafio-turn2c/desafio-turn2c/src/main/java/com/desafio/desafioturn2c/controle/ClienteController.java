@@ -1,6 +1,7 @@
 package com.desafio.desafioturn2c.controle;
 
 import com.desafio.desafioturn2c.dominio.Cliente;
+import com.desafio.desafioturn2c.dominio.ClienteEndereco;
 import com.desafio.desafioturn2c.repositorio.ClienteEnderecoRepository;
 import com.desafio.desafioturn2c.repositorio.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,14 @@ public class ClienteController {
         return clientes.isEmpty()
                 ? ResponseEntity.status(204).build()
                 : ResponseEntity.status(200).body(clientes);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Cliente> getById(@PathVariable Integer id) {
+
+        return clienteRepository.findById(id).isEmpty()
+                ? ResponseEntity.status(204).build()
+                : ResponseEntity.status(200).body(clienteRepository.findById(id).get());
     }
 
     @PutMapping("/{id}")

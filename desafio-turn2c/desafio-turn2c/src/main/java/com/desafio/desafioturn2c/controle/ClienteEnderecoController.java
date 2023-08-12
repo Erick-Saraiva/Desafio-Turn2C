@@ -38,6 +38,14 @@ public class ClienteEnderecoController {
                 : ResponseEntity.status(200).body(enderecos);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<ClienteEndereco> getById(@PathVariable Integer id) {
+
+        return clienteEnderecoRepository.findById(id).isEmpty()
+                ? ResponseEntity.status(204).build()
+                : ResponseEntity.status(200).body(clienteEnderecoRepository.findById(id).get());
+    }
+
     @PutMapping("/{id}")
     public ResponseEntity<ClienteEndereco> put(@PathVariable int id, @RequestBody ClienteEndereco enderecoAtualizado) {
         if (clienteEnderecoRepository.existsById(id)) {
