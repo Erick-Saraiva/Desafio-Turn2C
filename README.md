@@ -1,5 +1,5 @@
 # Desafio-Turn2C
-Repositório com as questões do teste técnico da Turn2C
+Repositório com o desafio técnico da Turn2C
 
 OBS: Sobre esse desafio:
 * Adicionei algumas validações nos campos que me foram pedidos então dependendo do campo você terá que ser específico, dentre eles:
