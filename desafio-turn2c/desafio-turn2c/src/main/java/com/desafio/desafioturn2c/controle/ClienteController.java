@@ -26,7 +26,7 @@ public class ClienteController {
             clienteRepository.save(novoCliente);
             return ResponseEntity.status(201).body(novoCliente);
         }
-        return ResponseEntity.status(204).build();
+        return ResponseEntity.status(400).build();
     }
 
     @GetMapping
