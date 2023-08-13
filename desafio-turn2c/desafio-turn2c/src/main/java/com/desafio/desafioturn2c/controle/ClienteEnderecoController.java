@@ -26,7 +26,7 @@ public class ClienteEnderecoController {
             clienteEnderecoRepository.save(endereco);
             return ResponseEntity.status(201).body(endereco);
         }
-        return ResponseEntity.status(204).build();
+        return ResponseEntity.status(400).build();
     }
 
     @GetMapping
